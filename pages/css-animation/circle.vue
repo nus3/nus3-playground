@@ -21,18 +21,18 @@
     background-color: #FFF8E1;
 
     .container {
-        width: 80%;
-        height: 80%;
+        width: 500px;
+        height: 500px;
         position: relative;
         // border: solid 1px black;
 
         .circle {
             position: absolute;
-            width: 50px;
-            height: 50px;
+            width: 30px;
+            height: 30px;
             border-radius: 50%;
             background-color: #ffb300;
-            animation: moveForward 3s ease-in infinite;
+            animation: moveForward 3s ease-in;
         }
     }
 }
@@ -40,13 +40,13 @@
 
 @keyframes moveForward {
     0% {
-        left: 0;
+        transform: translateX(0);
     }
     50% {
-        left: 100%;
+        transform: translateX(500px);
     }
     100% {
-        left: 0;
+        transform: translateX(0);
     }
 }
 
