@@ -25,6 +25,7 @@
         height: 500px;
         position: relative;
         // border: solid 1px black;
+        animation: moveForward 3s linear infinite;
 
         .circle {
             position: absolute;
@@ -32,7 +33,6 @@
             height: 30px;
             border-radius: 50%;
             background-color: #ffb300;
-            animation: moveForward 3s ease-in;
         }
     }
 }
@@ -40,13 +40,10 @@
 
 @keyframes moveForward {
     0% {
-        transform: translateX(0);
-    }
-    50% {
-        transform: translateX(500px);
+        transform: rotate(0deg);
     }
     100% {
-        transform: translateX(0);
+        transform: rotate(360deg);
     }
 }
 
