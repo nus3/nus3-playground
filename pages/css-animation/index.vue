@@ -8,6 +8,9 @@
             <li>
                 <nuxt-link :to="'/css-animation/circle'">円のやつ</nuxt-link>
             </li>
+            <li>
+                <nuxt-link :to="'/css-animation/test'">テスト</nuxt-link>
+            </li>
         </ul>
     </section>
 </template>
