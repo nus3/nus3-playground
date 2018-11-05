@@ -1,7 +1,10 @@
 <template>
     <main class="wrapper">
-        <div class="spinner">
-            <div class="point"></div>
+        <div class="spinner-1">
+            <div class="point-1"></div>
+        </div>
+        <div class="spinner-2">
+            <div class="point-2"></div>
         </div>
     </main>
 </template>
@@ -18,29 +21,53 @@
     background-color: #FFF8E1;
     position: relative;
 
-    .spinner {
-        width: 200px;
-        height: 200px;
+    .spinner-1 {
+        width: 500px;
+        height: 500px;
         margin: auto;
         position: absolute;
         top: 0;
         bottom: 0;
         right: 0;
         left: 0;
+        animation: rotate 3.0s linear infinite;
 
-        .point {
-            width: 10%;
-            height: 10%;
-            // border-radius: 50%;
-            background-color: #DE6641;
+        .point-1 {
+            width: 8%;
+            height: 8%;
+            border-radius: 50%;
             margin: auto;
+            background-color: #DE6641;
             position: absolute;
             top: 0;
-            bottom: 0;
             right: 0;
             left: 0;
+            animation: scale 3.0s linear infinite;
+        }
+    }
 
-            animation: movePoint 2.5s infinite;
+    .spinner-2 {
+        width: 500px;
+        height: 500px;
+        margin: auto;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        animation: rotate 3.0s 0.2s linear infinite;
+
+        .point-2 {
+            width: 8%;
+            height: 8%;
+            border-radius: 50%;
+            margin: auto;
+            background-color: #E8AC51;
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            animation: scale 3.0s 0.2s linear infinite;
         }
     }
 }
@@ -51,16 +78,24 @@
 |--------------------------------------------------------------------------
 */
 
-@keyframes movePoint {
+@keyframes rotate {
     0% {
-        top: 0;
-    }
-    50% {
-        transform: rotate(45deg);
+        transform: rotate(0deg);
     }
     100% {
-        top: 100%;
-        display: none;
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes scale {
+    0% {
+        transform: scale(0, 0);
+    }
+    50% {
+        transform: scale(1, 1);
+    }
+    100% {
+        transform: scale(0, 0);
     }
 }
 
