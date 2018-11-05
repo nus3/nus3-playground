@@ -31,7 +31,7 @@
         .point {
             width: 10%;
             height: 10%;
-            border-radius: 50%;
+            // border-radius: 50%;
             background-color: #DE6641;
             margin: auto;
             position: absolute;
@@ -54,6 +54,9 @@
 @keyframes movePoint {
     0% {
         top: 0;
+    }
+    50% {
+        transform: rotate(45deg);
     }
     100% {
         top: 100%;
