@@ -6,6 +6,9 @@
         <div class="spinner-2">
             <div class="point-2"></div>
         </div>
+        <div class="spinner-3">
+            <div class="point-3"></div>
+        </div>
     </main>
 </template>
 
@@ -68,6 +71,31 @@
             right: 0;
             left: 0;
             animation: scale 3.0s 0.2s linear infinite;
+        }
+    }
+
+    .spinner-3 {
+        width: 500px;
+        height: 500px;
+        margin: auto;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        animation: rotate 3.0s 0.4s linear infinite;
+
+        .point-3 {
+            width: 8%;
+            height: 8%;
+            border-radius: 50%;
+            margin: auto;
+            background-color: #F2E55C;
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            animation: scale 3.0s 0.4s linear infinite;
         }
     }
 }
