@@ -25,8 +25,8 @@
     position: relative;
 
     .spinner-1 {
-        width: 500px;
-        height: 500px;
+        width: 35vw;
+        height:  35vw;
         margin: auto;
         position: absolute;
         top: 0;
@@ -50,8 +50,8 @@
     }
 
     .spinner-2 {
-        width: 500px;
-        height: 500px;
+        width: 35vw;
+        height:  35vw;
         margin: auto;
         position: absolute;
         top: 0;
@@ -75,8 +75,8 @@
     }
 
     .spinner-3 {
-        width: 500px;
-        height: 500px;
+        width: 35vw;
+        height:  35vw;
         margin: auto;
         position: absolute;
         top: 0;
