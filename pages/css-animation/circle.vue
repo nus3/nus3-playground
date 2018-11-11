@@ -122,17 +122,14 @@ $pointColor7: #A55B9A;
 
 @keyframes scale {
     0% {
-        transform: scale(0, 0);
         width: 0;
         height: 0;
     }
     50% {
-        transform: scale(1, 1);
         width: 8%;
         height: 8%;
     }
     100% {
-        transform: scale(0, 0);
         width: 0;
         height: 0;
     }
