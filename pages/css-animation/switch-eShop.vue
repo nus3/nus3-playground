@@ -40,6 +40,9 @@
             <div class="bar-forward bar-10"></div>
             <div class="bar-back bar-10"></div>
         </div>
+        <div class="title-wrapper">
+            <h3>Hadatend eShop</h3>
+        </div>
     </main>
 </template>
 
@@ -51,13 +54,14 @@ export default {
 
 <style lang="scss" scoped>
 
+$bgColor: #FFF8E1;
 $barForwardColor: #ffa726;
 $barBackColor: #ffca28;
 
 .wrapper {
     width: 100vw;
     height: 100vh;
-    background-color: #FFF8E1;
+    background-color: $bgColor;
 
     .bar {
         height: 10vh;
@@ -85,26 +89,38 @@ $barBackColor: #ffca28;
         }
 
         @for $index from 1 through 10 {
+            // chromeの場合、5列目で謎の線が出てくるためそれの対応
+            @if $index == 5 {
+                .bar-forward.bar-#{$index} {
+                    border-bottom: 1px solid $barForwardColor;
+                }
+                .bar-back.bar-#{$index} {
+                    border-bottom: 1px solid $barBackColor;
+                }
+            }
+
             .bar-forward.bar-#{$index} {
                 top: 10vh * ($index - 1);
                 animation-delay: 0.2s * ($index - 1);
             }
             .bar-back.bar-#{$index} {
                 top: 10vh * ($index - 1);
-                animation-delay: 0.2s * ($index - 1);
+                animation-delay: 0.2s * ($index - 1) + 2.0s;
             }
         }
+    }
 
-        // .animation {
-        //     animation-name: extendBar;
-        //     animation-duration: 2.0s;
-        //     animation-timing-function: ease;
-        //     animation-delay: 2.0s;
-        //     animation-iteration-count: infinite;
-        //     animation-direction: normal;
-        //     animation-fill-mode: forwards;
-        //     animation-play-state: running;
-        // }
+    .title-wrapper {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        margin: 40px;
+
+        h3 {
+            color: $bgColor;
+            font-size: 50px;
+            margin: 0;
+        }
     }
 }
 
