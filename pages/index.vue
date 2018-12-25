@@ -5,9 +5,6 @@
             <li>
                 <nuxt-link :to="'/css-animation'">cssアニメーション</nuxt-link>
             </li>
-            <li>
-                <nuxt-link :to="'test'">テスト</nuxt-link>
-            </li>
         </ul>
     </section>
 </template>

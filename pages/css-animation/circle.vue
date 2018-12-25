@@ -99,7 +99,7 @@ $pointColor7: #A55B9A;
 
             .point-#{$index} {
                 animation: scale 3.0s $delaySecond infinite;
-            }            
+            }
         }
     }
 

@@ -9,7 +9,7 @@
                 <nuxt-link :to="'/css-animation/circle'">円のやつ</nuxt-link>
             </li>
             <li>
-                <nuxt-link :to="'/css-animation/test'">テスト</nuxt-link>
+                <nuxt-link :to="'/css-animation/switch-eShop'">switchのeショップのやつ</nuxt-link>
             </li>
         </ul>
     </section>
