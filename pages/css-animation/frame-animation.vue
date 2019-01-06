@@ -61,9 +61,11 @@ $lineColor: #ffa726;
 */
 
 .container {
+    position: relative;
     width: 100vw;
     height: 100vh;
     background-color: $bgColor;
+    overflow: hidden;
 
     .left-line {
         position: absolute;
