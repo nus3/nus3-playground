@@ -10,6 +10,10 @@
             <span class="text text7">験</span>
             <span class="text text8">場</span>
         </h1>
+        <nuxt-link
+            :to="'/css-animation/'"
+            class="button"
+        >MENUへ</nuxt-link>
 
         <hr class="left-line">
         <hr class="left-line hidden">
@@ -62,6 +66,7 @@ $mobile: 480px;
 
 $bgColor: #FFF8E1;
 $textColor: #ffa726;
+$buttonColor: #39A869;
 
 
 /*
@@ -78,6 +83,7 @@ $textColor: #ffa726;
     justify-content: center;
     align-items: center;
     text-align: center;
+    flex-direction: column;
     position: relative;
     overflow: hidden;
 
@@ -86,6 +92,7 @@ $textColor: #ffa726;
         color: $textColor;
         letter-spacing: 10px;
         font-size: 50px;
+        margin-bottom: 20px;
 
         @include tablet {
             padding: 0 40px;
@@ -96,7 +103,7 @@ $textColor: #ffa726;
             opacity: 0;
 
             animation:
-                extendText 2.0s ease forwards,
+                extendText 4.0s ease forwards,
                 rotateText 1.0s ease forwards;
         }
 
@@ -104,6 +111,26 @@ $textColor: #ffa726;
             .text.text#{$index} {
                 animation-delay: 0.2s * ($index - 1);
             }
+        }
+    }
+
+    .button {
+        text-decoration: none;
+        padding: 20px 40px;
+        background-color: $textColor;
+        color: white;
+        border-radius: 5px;
+        font-size: 18px;
+        opacity: 0;
+
+        animation-name: extendText;
+        animation-duration: 2.0s;
+        animation-delay: 3.0s;
+        animation-fill-mode: forwards;
+
+        &:hover {
+            opacity: 0.8;
+            transition: opacity 0.8s;
         }
     }
 

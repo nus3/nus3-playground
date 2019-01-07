@@ -3,7 +3,7 @@
         <h1>cssアニメーションのまとめ</h1>
         <ul>
             <li>
-                <nuxt-link :to="'/'">HOMEへ</nuxt-link>
+                <nuxt-link :to="'/'">TOPへ</nuxt-link>
             </li>
             <li>
                 <nuxt-link :to="'/css-animation/circle'">円のやつ</nuxt-link>
