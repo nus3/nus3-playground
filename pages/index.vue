@@ -13,7 +13,7 @@
         <nuxt-link
             :to="'/css-animation/'"
             class="button"
-        >MENUへ</nuxt-link>
+        >MORE</nuxt-link>
 
         <hr class="left-line">
         <hr class="left-line hidden">
@@ -117,20 +117,34 @@ $buttonColor: #39A869;
     .button {
         text-decoration: none;
         padding: 20px 40px;
-        background-color: $textColor;
-        color: white;
+        color: $buttonColor;
+        border: solid 3px $buttonColor;
         border-radius: 5px;
         font-size: 18px;
-        opacity: 0;
+        position: relative;
 
-        animation-name: extendText;
-        animation-duration: 2.0s;
-        animation-delay: 3.0s;
-        animation-fill-mode: forwards;
+        animation:
+            extendText 3.0s 3.0s forwards,
+            hiddenElement 3.0s;
+
+        &::after {
+            content: '';
+            background: $buttonColor;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 0;
+            transition: width 0.3s, height 0.3s;
+            z-index: -1;
+        }
+
+        &:hover::after {
+            height: 100%;
+        }
 
         &:hover {
-            opacity: 0.8;
-            transition: opacity 0.8s;
+            color: white;
         }
     }
 
@@ -291,6 +305,15 @@ $buttonColor: #39A869;
     }
     100% {
         transform: translateX(-100vw);
+    }
+}
+
+@keyframes hiddenElement {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
     }
 }
 </style>
