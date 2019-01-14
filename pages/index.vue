@@ -64,9 +64,9 @@ $mobile: 480px;
 |--------------------------------------------------------------------------
 */
 
-$bgColor: #FFF8E1;
-$textColor: #ffa726;
-$buttonColor: #39A869;
+$bgColor: #0d47a1;
+$textColor: #e3f2fd;
+$buttonColor: #ff9100;
 
 
 /*
@@ -123,6 +123,7 @@ $buttonColor: #39A869;
         font-size: 24px;
         position: relative;
         letter-spacing: 5px;
+        transition: color 0.3s;
 
         animation:
             extendText 3.0s 3.0s forwards,
