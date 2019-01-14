@@ -1,0 +1,12 @@
+// @font-face {
+//     font-family: 'AntMaru';
+//     src: url('./font/ant-maru.woff2') format('woff2');
+// }
+@font-face {
+    font-family: 'Ghatee';
+    src: url('./font/ghatee.woff2') format('woff2');
+}
+
+body {
+    font-family: 'Ghatee', monospace;
+}

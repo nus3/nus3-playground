@@ -39,6 +39,9 @@ module.exports = {
         })
       }
     }
-  }
+  },
+  css: [
+    { src: '@/assets/css/style.scss' }
+  ],
 }
 

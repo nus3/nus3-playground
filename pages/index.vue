@@ -13,7 +13,7 @@
         <nuxt-link
             :to="'/css-animation/'"
             class="button"
-        >MORE</nuxt-link>
+        >MENU</nuxt-link>
 
         <hr class="left-line">
         <hr class="left-line hidden">
@@ -120,8 +120,9 @@ $buttonColor: #39A869;
         color: $buttonColor;
         border: solid 3px $buttonColor;
         border-radius: 5px;
-        font-size: 18px;
+        font-size: 24px;
         position: relative;
+        letter-spacing: 5px;
 
         animation:
             extendText 3.0s 3.0s forwards,
