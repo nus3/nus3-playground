@@ -41,7 +41,7 @@ module.exports = {
     }
   },
   css: [
-    { src: '@/assets/css/style.scss' }
+    { src: '@/assets/css/config.scss' }
   ],
 }
 

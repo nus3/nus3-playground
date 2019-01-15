@@ -32,6 +32,7 @@
 
 <style lang="scss" scoped>
 
+// HACK: 共通で使う処理は一つにまとめる
 /*
 |--------------------------------------------------------------------------
 |  Responsive
@@ -135,14 +136,15 @@ $buttonColor: #ff9100;
             position: absolute;
             top: 0;
             left: 0;
-            width: 100%;
-            height: 0;
-            transition: width 0.3s, height 0.3s;
+            right: 0;
+            bottom: 0;
+            transform: scale(0);
+            transition: transform 0.3s;
             z-index: -1;
         }
 
         &:hover::after {
-            height: 100%;
+            transform: scale(1);
         }
 
         &:hover {
