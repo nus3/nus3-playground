@@ -3,7 +3,7 @@
         <h1 class="title">CSSアニメーションまとめ</h1>
         <div class="menu">
             <nuxt-link
-                :to="''"
+                :to="'/'"
                 class="button btn-1"
             >TOPへ</nuxt-link>
             <nuxt-link
