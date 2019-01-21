@@ -14,13 +14,6 @@
                 :to="'/css-animation/switch-eShop'"
                 class="button btn-3"
             >switch</nuxt-link>
-            <a href="javascript:void(0)" class="button btn-4"></a>
-            <a href="javascript:void(0)" class="button btn-5"></a>
-            <a href="javascript:void(0)" class="button btn-6"></a>
-            <a href="javascript:void(0)" class="button btn-7"></a>
-            <a href="javascript:void(0)" class="button btn-8"></a>
-            <a href="javascript:void(0)" class="button btn-9"></a>
-            <a href="javascript:void(0)" class="button btn-10"></a>
         </div>
     </main>
 </template>
@@ -112,7 +105,7 @@ $buttonColor: #ff9100;
             width: 80px;
             height: 80px;
             line-height: 80px;
-            padding: 20px;
+            padding: 40px;
             text-decoration: none;
             font-size: 25px;
             color: $buttonColor;
@@ -151,8 +144,6 @@ $buttonColor: #ff9100;
             animation-name: showElement;
             animation-duration: 4.0s;
             animation-fill-mode: forwards;
-
-            animation: showElement 4.0s;
         }
 
         @for $index from 1 through 10 {

@@ -43,6 +43,10 @@
         <div class="title-wrapper">
             <h3>Hadatend eShop</h3>
         </div>
+        <nuxt-link
+            :to="'/css-animation/'"
+            class="button"
+        >MENU</nuxt-link>
     </main>
 </template>
 
@@ -54,9 +58,51 @@ export default {
 
 <style lang="scss" scoped>
 
+// HACK: 共通で使う処理は一つにまとめる
+/*
+|--------------------------------------------------------------------------
+|  Responsive
+|--------------------------------------------------------------------------
+*/
+
+$desktop: 992px;
+$tablet: 600px;
+$mobile: 480px;
+
+@mixin desktop {
+    @media (max-width: ($desktop)) {
+        @content;
+    }
+}
+@mixin tablet {
+    @media (max-width: ($tablet)) {
+        @content;
+    }
+}
+@mixin mobile {
+    @media (max-width: ($mobile)) {
+        @content;
+    }
+}
+
+/*
+|--------------------------------------------------------------------------
+|  config
+|--------------------------------------------------------------------------
+*/
+
 $bgColor: #FFF8E1;
 $barForwardColor: #ffa726;
 $barBackColor: #ffca28;
+
+$buttonColor: #0d47a1;
+$textColor: #e3f2fd;
+
+/*
+|--------------------------------------------------------------------------
+|  style
+|--------------------------------------------------------------------------
+*/
 
 .wrapper {
     width: 100vw;
@@ -122,6 +168,66 @@ $barBackColor: #ffca28;
             margin: 0;
         }
     }
+
+    .button {
+        position: absolute;
+        right: 0;
+        bottom: 50px;
+        width: 80px;
+        height: 80px;
+        line-height: 80px;
+        margin-right: 50px;
+        margin-bottom: 50px;
+        padding: 40px;
+        text-decoration: none;
+        font-size: 25px;
+        color: $buttonColor;
+        text-align: center;
+        border: solid 3px $buttonColor;
+        border-radius: 50%;
+        opacity: 0;
+        z-index: 1;
+
+        @include tablet {
+            bottom: 30px;
+            width: 60px;
+            height: 60px;
+            line-height: 60px;
+            margin-right: 30px;
+            margin-bottom: 0;
+            padding: 20px;
+            font-size: 20px;
+        }
+
+        &::after {
+            content: '';
+            background: $buttonColor;
+            transition: width 0.3s, height 0.3s;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 50%;
+            z-index: -1;
+            transform: scale(0);
+            transition: transform 0.3s;
+        }
+
+        &:hover::after {
+            transform: scale(1);
+        }
+
+        &:hover {
+            color: $textColor;
+        }
+
+        animation-name: showElement;
+        animation-duration: 2.0s;
+        // HACK: 変数から算出する
+        animation-delay: 5.8s;
+        animation-fill-mode: forwards;
+    }
 }
 
 
@@ -137,6 +243,15 @@ $barBackColor: #ffca28;
     }
     100% {
         width: 100vw;
+    }
+}
+
+@keyframes showElement {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
     }
 }
 

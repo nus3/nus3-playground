@@ -21,6 +21,10 @@
         <div class="common-spinner spinner-7">
             <div class="common-point point-7 point-color-7"></div>
         </div>
+        <nuxt-link
+            :to="'/css-animation/'"
+            class="button"
+        >MENU</nuxt-link>
     </main>
 </template>
 
@@ -32,6 +36,12 @@ export default {
 
 <style lang="scss" scoped>
 
+/*
+|--------------------------------------------------------------------------
+|  config
+|--------------------------------------------------------------------------
+*/
+
 $pointColor1: #DE6641;
 $pointColor2: #E8AC51;
 $pointColor3: #F2E55C;
@@ -39,6 +49,42 @@ $pointColor4: #39A869;
 $pointColor5: #4784BF;
 $pointColor6: #5D5099;
 $pointColor7: #A55B9A;
+
+$buttonColor: #0d47a1;
+$textColor: #e3f2fd;
+
+// HACK: 共通で使う処理は一つにまとめる
+/*
+|--------------------------------------------------------------------------
+|  Responsive
+|--------------------------------------------------------------------------
+*/
+
+$desktop: 992px;
+$tablet: 600px;
+$mobile: 480px;
+
+@mixin desktop {
+    @media (max-width: ($desktop)) {
+        @content;
+    }
+}
+@mixin tablet {
+    @media (max-width: ($tablet)) {
+        @content;
+    }
+}
+@mixin mobile {
+    @media (max-width: ($mobile)) {
+        @content;
+    }
+}
+
+/*
+|--------------------------------------------------------------------------
+|  style
+|--------------------------------------------------------------------------
+*/
 
 .wrapper {
     width: 100%;
@@ -103,6 +149,65 @@ $pointColor7: #A55B9A;
         }
     }
 
+    .button {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        width: 80px;
+        height: 80px;
+        line-height: 80px;
+        margin-right: 50px;
+        margin-bottom: 50px;
+        padding: 40px;
+        text-decoration: none;
+        font-size: 25px;
+        color: $buttonColor;
+        text-align: center;
+        border: solid 3px $buttonColor;
+        border-radius: 50%;
+        opacity: 0;
+        z-index: 1;
+
+        @include tablet {
+            width: 60px;
+            height: 60px;
+            line-height: 60px;
+            margin-right: 30px;
+            margin-bottom: 30px;
+            padding: 20px;
+            font-size: 20px;
+        }
+
+        &::after {
+            content: '';
+            background: $buttonColor;
+            transition: width 0.3s, height 0.3s;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 50%;
+            z-index: -1;
+            transform: scale(0);
+            transition: transform 0.3s;
+        }
+
+        &:hover::after {
+            transform: scale(1);
+        }
+
+        &:hover {
+            color: $textColor;
+        }
+
+        animation-name: showElement;
+        animation-duration: 2.0s;
+        // HACK: 変数から算出する
+        animation-delay: 3.0s;
+        animation-fill-mode: forwards;
+    }
+
 }
 
 /*
@@ -135,11 +240,14 @@ $pointColor7: #A55B9A;
     }
 }
 
-
-
-
-
-
+@keyframes showElement {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
 
 
 </style>
