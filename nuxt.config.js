@@ -1,5 +1,13 @@
+
+const routerBase = process.env.DEPLOY_ENV === 'GH_PAGES' ? {
+  router: {
+    base: '/nus3-playground/'
+  }
+} : {}
+
 module.exports = {
   mode: 'universal',
+  ...routerBase,
 
   /*
   ** Headers of the page
