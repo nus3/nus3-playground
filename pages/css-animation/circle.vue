@@ -22,7 +22,7 @@
             <div class="common-point point-7 point-color-7"></div>
         </div>
         <nuxt-link
-            :to="'/nus3-playground/css-animation/'"
+            :to="'/css-animation/'"
             class="button"
         >MENU</nuxt-link>
     </main>

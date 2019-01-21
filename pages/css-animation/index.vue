@@ -3,15 +3,15 @@
         <h1 class="title">CSSアニメーションまとめ</h1>
         <div class="menu">
             <nuxt-link
-                :to="'/nus3-playground'"
+                :to="''"
                 class="button btn-1"
             >TOPへ</nuxt-link>
             <nuxt-link
-                :to="'/nus3-playground/css-animation/circle'"
+                :to="'/css-animation/circle'"
                 class="button btn-2"
             >円</nuxt-link>
             <nuxt-link
-                :to="'/nus3-playground/css-animation/switch-eShop'"
+                :to="'/css-animation/switch-eShop'"
                 class="button btn-3"
             >switch</nuxt-link>
         </div>
