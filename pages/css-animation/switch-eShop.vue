@@ -44,7 +44,7 @@
             <h3>Hadatend eShop</h3>
         </div>
         <nuxt-link
-            :to="'/css-animation/'"
+            :to="'/nus3-playground/css-animation/'"
             class="button"
         >MENU</nuxt-link>
     </main>

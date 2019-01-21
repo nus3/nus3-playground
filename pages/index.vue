@@ -11,7 +11,7 @@
             <span class="text text8">場</span>
         </h1>
         <nuxt-link
-            :to="'/css-animation/'"
+            :to="'/nus3-playground/css-animation/'"
             class="button"
         >MENU</nuxt-link>
 
